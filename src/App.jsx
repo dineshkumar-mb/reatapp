@@ -1,18 +1,20 @@
-import Hello from "./components/Hello";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Todos from "./pages/Todos";
+import { loader as todosLoader } from "./pages/Todos";
 
-// Component: App
+// create a router object
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Todos />,
+    // link the loader function to the route
+    loader: todosLoader
+  }
+]);
+
+
 const App = () => {
-
-  const name = 20;
-  const b = 10;
-  const now = new Date();
-
-  return (
-    <div>
-      Date: {now.toString()}
-      <p>{a} plus {b} is {a+b}</p>
-    </div>
-  )
+  return <RouterProvider router={router} />;
 }
 
 export default App;
