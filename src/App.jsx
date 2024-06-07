@@ -3,7 +3,7 @@ import Hello from "./components/Hello";
 // Component: App
 const App = () => {
 
-  const a = 20;
+  const name = 20;
   const b = 10;
   const now = new Date();
 
